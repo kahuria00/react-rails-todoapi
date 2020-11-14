@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  database: ToDoDB
+  host: localhost
+  username: charity
+  password: p@ssword
+  socket: /var/run/mysqld/mysqld.sock
+  pool: 10
+  timeout: 5000
+
+development:
+  adapter: mysql2
+  database: ToDoDB
+  username: charity
+  password: p@ssword
+  socket: /var/run/mysqld/mysqld.sock
+  pool: 10 
+test:
+  adapter: sqlite3
+  database: db/testtododb.sqlite3
+  pool: 10
+
+production:
+  <<: *default
